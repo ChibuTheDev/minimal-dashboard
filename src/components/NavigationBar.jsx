@@ -55,31 +55,33 @@ function NavigationBar() {
         isExpanded ? 'expanded':'nonExpanded'
     }
 
-    className='px-10 py-12 flex flex-col border border-r-2 w-1/5 h-screen relative'>
+    className={'py-12 flex flex-col border border-r-2 w-1/5  h-dvh' + (isExpanded?' px-10':'px-4 h-screen') }>
 
 
-      <div className='logo-div flex space-x-3 items-center'>
+      <div className='logo-div flex space-x-3 items-center relative'>
         <img src={Logo} alt="" />
-        <span className={(isExpanded?'block':'hidden') + 'font-bold' }  > Agba Tracker</span>
-      </div>
+        <span className={(isExpanded?'block':'hidden' )}  > Agba Tracker</span>
 
         <div 
         onClick={()=> setIsExpanded(!isExpanded)}
-        className=' flex items-center justify-center w-5 h-5 rounded-full bg-[#FF8C8C] text-white absolute top-14 -right-[10.5px]'>
+        className={'flex items-center justify-center w-5 h-5 rounded-full bg-[#FF8C8C] text-white absolute top-14 ' +   (isExpanded ? '-right-[51.5px]' : '-right-[10.5px]') }>
             <img className='w-[6px]' src={rightArrow} />
             
         </div>
+      </div>
+
+      
 
        
        <div className={' mt-11 flex flex-col space-y-8' }>
-            {navLinks.map((item,index)=> <div className={'flex space-x-3 p-2 rounded-sm' +
+            {navLinks.map((item,index)=> <div className={'flex space-x-3 p-2 rounded-md' +
              (active===index?
              ' text-white bg-[#FF8C8C]'
-             :'')}
+            :'') + (isExpanded?'':' items-center justify-center')}
               key={index}
               onClick={()=> setActive(index)}>
             <item.icon/> 
-              <span className=' font-bold cursor-pointer'> {item.name}</span>
+              <span className={'font-bold cursor-pointer ' + (isExpanded?'block':'hidden')}> {item.name}</span>
             </div>)}
        </div>
     </motion.div>
