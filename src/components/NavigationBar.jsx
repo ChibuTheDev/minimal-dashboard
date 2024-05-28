@@ -59,7 +59,7 @@ function NavigationBar() {
 
 
       <div className='logo-div flex space-x-3 items-center relative'>
-        <img src={Logo} alt="" />
+        <img className={!isExpanded&&'ml-3'} src={Logo} alt="" />
         <span className={(isExpanded?'block':'hidden' )}  > Agba Tracker</span>
 
         <div 
