@@ -55,7 +55,7 @@ function NavigationBar() {
         isExpanded ? 'expanded':'nonExpanded'
     }
 
-    className={'py-12 flex flex-col border border-r-2 w-1/5  h-dvh' + (isExpanded?' px-10':'px-4 h-screen') }>
+    className={'py-12 flex flex-col border border-r-2 w-1/5 h-auto' + (isExpanded?' px-10':'px-4 h-screen') }>
 
 
       <div className='logo-div flex space-x-3 items-center relative'>
@@ -64,7 +64,7 @@ function NavigationBar() {
 
         <div 
         onClick={()=> setIsExpanded(!isExpanded)}
-        className={'flex items-center justify-center w-5 h-5 rounded-full bg-[#FF8C8C] text-white absolute top-14 ' +   (isExpanded ? '-right-[51.5px]' : '-right-[10.5px]') }>
+        className={'flex items-center justify-center w-5 h-5 rounded-full bg-[#FF8C8C] text-white absolute top-14 cursor-pointer ' +   (isExpanded ? '-right-[51.5px]' : '-right-[10.5px]') }>
             <img className='w-[6px]' src={rightArrow} />
             
         </div>

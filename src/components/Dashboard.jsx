@@ -39,7 +39,7 @@ function Dashboard() {
 
       <div className=" flex  w-[350px] h-[150px] border rounded border-gray-600 flex-col justify-center mt-6 p-4">
         <span>What you spent in a month </span>
-        <span className=" text-gray-400">You spent $20,000 this month (you get money o)</span>
+        <span className=" text-gray-400">You spent $90,000 this month (you get money o)</span>
       </div>
 
      </div>   
